@@ -3,7 +3,7 @@ package at.edu.c02.calculator;
 public class CalculatorException extends Exception {
 
 	/**
-	 * 
+	 *   Test GIT
 	 */
 	private static final long serialVersionUID = 1L;
 
