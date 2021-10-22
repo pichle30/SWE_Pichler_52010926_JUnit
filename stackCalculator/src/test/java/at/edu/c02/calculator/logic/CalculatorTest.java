@@ -17,7 +17,7 @@ public class CalculatorTest {
 
 		//setup
 		Calculator calc = new CalculatorImpl();
-		
+
 		//execute
 		calc.push(2.0);
 		calc.push(3);
@@ -25,10 +25,10 @@ public class CalculatorTest {
 
 		//verify
 		assertEquals(5, result, 0);
-		
+
 
 	}
-	
+
 	@Test
 	public void testSimpleMulOperation() throws Exception {
 
@@ -40,7 +40,7 @@ public class CalculatorTest {
 		assertEquals(6, result, 0);
 
 	}
-	
+
 	@Test
 	public void testSimpleDivOperation() throws Exception {
 
@@ -52,10 +52,7 @@ public class CalculatorTest {
 		assertEquals(3, result, 0);
 
 	}
-	
-	
-	
-	
+
 
 	//
 	@Test(expected = CalculatorException.class)
@@ -77,12 +74,23 @@ public class CalculatorTest {
 			calc.perform(Operation.div);
 
 			fail("Exception expected");
-			
+
 
 		} catch (CalculatorException e) {
 			assertEquals("Division by zero", e.getMessage());
 			// e.getCause()
 		}
 
+	}
+
+	@Test
+	public void testModulo() throws Exception {
+
+		Calculator calc = new CalculatorImpl();
+		calc.push(11);
+		calc.push(3);
+		double result = calc.perform(Operation.mod);
+
+		assertEquals(2, result, 0);
 	}
 }
